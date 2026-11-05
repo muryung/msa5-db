@@ -3,3 +3,59 @@
 -- 조회하기 위해 사용하는 쿼리
 
 -- 조회한 데이터 중 특정 컬럼만 출력
+SELECT 
+	emp_id
+	, `name` -- 예약어라서 백틱으로 감쌈
+-- 	, gender -- del v2.0
+	, birth -- add v2.0
+FROM employees
+;
+
+-- Asterrisk (*): 모든 컬럼 조회
+SELECT 
+	*
+	
+FROM employees
+;
+
+-- WHERE 절 ㅣ 특정 컬럼의 값이 조건에 맞는 데이터만 조회
+-- 사번이 10009인 사원의 모든 정보를 조회해 주세요.
+SELECT
+	*
+FROM employees
+WHERE
+	emp_id = 10009
+;
+
+-- 사원명이 "박보람" 인 사원을 모두 찾아주세요.
+
+SELECT
+	*
+FROM employees emp
+WHERE
+	`name` = '박보람'
+;
+
+-- 생일이 2000-01-01 이후인 사원 모두 찾아주세요.
+SELECT
+	*
+FROM employees
+WHERE
+	birth >= '2000-01-01'
+;
+
+-- 퇴사하지 않은 사원 정보 다 주세요.
+SELECT
+	*
+FROM employees
+WHERE
+	fire_at IS NULL
+;
+
+-- 퇴사한 사원 정보 다 주세요.
+SELECT
+	*
+FROM employees
+WHERE
+	fire_at IS NOT NULL
+;
