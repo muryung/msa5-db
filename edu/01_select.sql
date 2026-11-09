@@ -212,7 +212,9 @@ GROUP BY dept_code
 
 -- 직급별 사원수가 10000명 이상인 직급을 조회해주세요.
 SELECT
-	title_code, count(title_code)
+	title_code,
+	COUNT(title_code) cnt
 FROM title_emps
-GROUP BY title_code
+WHERE end_at IS NULL
+GROUP BY title_code HAVING cnt >= 10000
 ;
