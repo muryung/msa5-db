@@ -18,7 +18,8 @@ INSERT INTO employees (
 -- 복수의 레코드를 삽입하고 싶을 경우
 
 INSERT INTO employees (`name`,birth,gender,hire_at) 
-VALUES ('최무령','2000-02-26','M',NOW()), 
+VALUES 
+('최무령','2000-02-26','M',NOW()), 
 ('최무령','2000-02-26','M',NOW());
 
 -- SELECT INSERT
